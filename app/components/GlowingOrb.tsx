@@ -1,6 +1,6 @@
 "use client";
 
-import motion from "motion";
+import motion from "motion/react";
 
 interface GlowingOrbProps {
   size?: string;

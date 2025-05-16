@@ -17,8 +17,10 @@ import GraphIcon from "./components/icons/GraphIcon";
 import FeaturedStat from "./components/FeaturedStat";
 import FeatureCard from "./components/FeatureCard";
 import SectionTitle from "./components/SectionTitle";
+import SectionHeader from "./components/SectionHeader";
 import TestimonialCard from "./components/TestimonialCard";
 import Header from "./components/Header";
+import AdCarousel from "./components/AdCarousel";
 
 // Animation variants
 const fadeIn = {
@@ -26,12 +28,12 @@ const fadeIn = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { 
-      duration: 0.5, 
+    transition: {
+      duration: 0.5,
       ease: "easeOut",
       opacity: { duration: 0.5 },
-      y: { duration: 0.5 }
-    }
+      y: { duration: 0.5 },
+    },
   },
 };
 
@@ -53,7 +55,7 @@ interface FadeInWhenVisibleProps {
 const FadeInWhenVisible = ({ children, delay = 0 }: FadeInWhenVisibleProps) => {
   const [ref, inView] = useInView({
     triggerOnce: true,
-    threshold: 0.1
+    threshold: 0.1,
   });
 
   return (
@@ -72,7 +74,7 @@ const FadeInWhenVisible = ({ children, delay = 0 }: FadeInWhenVisibleProps) => {
             ease: "easeOut",
             delay,
             opacity: { duration: 0.5, delay },
-            y: { duration: 0.5, delay }
+            y: { duration: 0.5, delay },
           },
         },
       }}
@@ -137,7 +139,7 @@ export default function Home() {
       </div>
 
       {/* Hero Section with Video */}
-      <Header 
+      <Header
         title="XMA's Complete LeadFlow System"
         subtitle="Thank you for booking your call with us. Watch this presentation to learn how we'll help grow your business in 2025."
         videoSrc="https://res.cloudinary.com/dw1j7izud/video/upload/v1747401674/djybf6fdqmbsdeofr3gz.mp4"
@@ -235,6 +237,26 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Our Work Section */}
+      <section className="w-full py-32 relative z-10">
+        <div className="absolute w-full h-full bg-red-900/5 mix-blend-overlay"></div>
+        <div className="max-w-7xl py-16 mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <SectionHeader 
+            title="Our Work" 
+            subtitle="Check out the high-quality videos we create for our clients using our script automation tool."
+          />
+          
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+          >
+            <AdCarousel />
+          </motion.div>
+        </div>
+      </section>
+
       {/* Results Section */}
       <section className="w-full py-32 relative">
         <SectionTitle title="Results We've Delivered" />
@@ -253,14 +275,14 @@ export default function Home() {
               achievement="Revenue Growth"
               delayMultiplier={0}
             />
-            
+
             <TestimonialCard
               client="The Flower Guys"
               testimonial="Helped this UAE e-commerce phenomenon take Dubai by storm in 2025 with website building, landing page optimization, and ad campaigns."
               achievement="Market Domination"
               delayMultiplier={1}
             />
-            
+
             <TestimonialCard
               client="Formatic Car Infos"
               testimonial="Generated qualified leads daily and created an optimized landing page that significantly increased conversion rates."
@@ -284,20 +306,20 @@ export default function Home() {
             viewport={{ once: true, amount: 0.1 }}
             className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center"
           >
-            <FeaturedStat 
-              value="3M+" 
-              label="Dirhams in Ad Spend Managed" 
-              delayMultiplier={0} 
+            <FeaturedStat
+              value="3M+"
+              label="Dirhams in Ad Spend Managed"
+              delayMultiplier={0}
             />
-            <FeaturedStat 
-              value="30K+" 
-              label="Qualified Leads Generated" 
-              delayMultiplier={1} 
+            <FeaturedStat
+              value="30K+"
+              label="Qualified Leads Generated"
+              delayMultiplier={1}
             />
-            <FeaturedStat 
-              value="300+" 
-              label="Converting Video Ads" 
-              delayMultiplier={2} 
+            <FeaturedStat
+              value="300+"
+              label="Converting Video Ads"
+              delayMultiplier={2}
             />
           </motion.div>
         </div>
@@ -352,8 +374,13 @@ export default function Home() {
                   </li>
                 </ul>
               </motion.div>
-              <motion.div variants={fadeIn} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} className="relative">
-                <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-gradient-to-br from-red-500/20 to-transparent rounded-full blur-xl"></div>
+              <motion.div
+                variants={fadeIn}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.1 }}
+                className="relative backdrop-blur-xs"
+              >
                 <div className="aspect-square w-full max-w-md mx-auto bg-gradient-to-br from-white/5 to-white/10 rounded-xl p-8 border border-white/10 shadow-2xl relative z-10 overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-br from-red-500/10 to-transparent opacity-50"></div>
                   <div className="absolute w-32 h-32 bg-gradient-radial from-red-500/20 to-transparent rounded-full -top-10 -left-10 blur-xl"></div>
@@ -370,9 +397,8 @@ export default function Home() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.1 }}
-                className="relative order-2 md:order-1"
+                className="relative order-2 md:order-1 backdrop-blur-xs"
               >
-                <div className="absolute -top-10 -left-10 w-64 h-64 bg-gradient-to-tr from-red-500/20 to-transparent rounded-full blur-xl"></div>
                 <div className="aspect-square w-full max-w-md mx-auto bg-gradient-to-br from-white/5 to-white/10 rounded-xl p-8 border border-white/10 shadow-2xl relative z-10 overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-br from-red-500/10 to-transparent opacity-50"></div>
                   <div className="absolute w-32 h-32 bg-gradient-radial from-red-500/20 to-transparent rounded-full -bottom-10 -right-10 blur-xl"></div>
@@ -428,11 +454,10 @@ export default function Home() {
       <section className="w-full py-32 relative">
         <div className="absolute inset-0 bg-gradient-to-r from-red-900/10 to-transparent"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <FadeInWhenVisible>
-            <h2 className="text-3xl md:text-5xl font-bold text-center mb-24 bg-gradient-to-r from-red-400 via-red-500 to-red-700 bg-clip-text text-transparent leading-tight">
-              Industries We Serve
-            </h2>
-          </FadeInWhenVisible>
+          <SectionHeader
+            title="Industries We Serve"
+            subtitle="We specialize in delivering results across a wide range of sectors"
+          />
 
           <motion.div
             variants={staggerContainer}
@@ -657,11 +682,10 @@ export default function Home() {
       {/* Technology Stack Section */}
       <section className="w-full py-32 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <FadeInWhenVisible>
-            <h2 className="text-3xl md:text-5xl font-bold text-center mb-24 bg-gradient-to-r from-red-400 via-red-500 to-red-700 bg-clip-text text-transparent leading-tight">
-              Our Technology Stack
-            </h2>
-          </FadeInWhenVisible>
+          <SectionHeader
+            title="Our Technology Stack"
+            subtitle="Cutting-edge tools and platforms that power our lead generation systems"
+          />
 
           <motion.div
             variants={staggerContainer}
@@ -676,9 +700,9 @@ export default function Home() {
               className="bg-white/5 backdrop-blur-md p-8 rounded-xl shadow-lg border border-white/10 blur-fix"
               style={{ willChange: "transform" }}
             >
-              <IconBox 
-                icon={<DashboardIcon size={40} />} 
-                className="mb-6 mx-auto" 
+              <IconBox
+                icon={<DashboardIcon size={40} />}
+                className="mb-6 mx-auto"
               />
               <h3 className="text-xl font-bold text-center mb-4 text-red-500">
                 Meta Ads Platform
@@ -700,10 +724,7 @@ export default function Home() {
               className="bg-white/5 backdrop-blur-md p-8 rounded-xl shadow-lg border border-white/10 blur-fix"
               style={{ willChange: "transform" }}
             >
-              <IconBox 
-                icon={<AiIcon size={40} />} 
-                className="mb-6 mx-auto" 
-              />
+              <IconBox icon={<AiIcon size={40} />} className="mb-6 mx-auto" />
               <h3 className="text-xl font-bold text-center mb-4 text-red-500">
                 Proprietary CRM Suite
               </h3>
@@ -724,9 +745,9 @@ export default function Home() {
               className="bg-white/5 backdrop-blur-md p-8 rounded-xl shadow-lg border border-white/10 blur-fix"
               style={{ willChange: "transform" }}
             >
-              <IconBox 
-                icon={<AnalyticsIcon size={40} />} 
-                className="mb-6 mx-auto" 
+              <IconBox
+                icon={<AnalyticsIcon size={40} />}
+                className="mb-6 mx-auto"
               />
               <h3 className="text-xl font-bold text-center mb-4 text-red-500">
                 AI Analytics Dashboard
@@ -748,10 +769,7 @@ export default function Home() {
               className="bg-white/5 backdrop-blur-md p-8 rounded-xl shadow-lg border border-white/10 blur-fix"
               style={{ willChange: "transform" }}
             >
-              <IconBox 
-                icon={<ChatIcon size={40} />} 
-                className="mb-6 mx-auto" 
-              />
+              <IconBox icon={<ChatIcon size={40} />} className="mb-6 mx-auto" />
               <h3 className="text-xl font-bold text-center mb-4 text-red-500">
                 Smart Chat Automation
               </h3>
@@ -772,9 +790,9 @@ export default function Home() {
               className="bg-white/5 backdrop-blur-md p-8 rounded-xl shadow-lg border border-white/10 blur-fix"
               style={{ willChange: "transform" }}
             >
-              <IconBox 
-                icon={<AutomationIcon size={40} />} 
-                className="mb-6 mx-auto" 
+              <IconBox
+                icon={<AutomationIcon size={40} />}
+                className="mb-6 mx-auto"
               />
               <h3 className="text-xl font-bold text-center mb-4 text-red-500">
                 Campaign Automation
@@ -796,9 +814,9 @@ export default function Home() {
               className="bg-white/5 backdrop-blur-md p-8 rounded-xl shadow-lg border border-white/10 blur-fix"
               style={{ willChange: "transform" }}
             >
-              <IconBox 
-                icon={<GraphIcon size={40} />} 
-                className="mb-6 mx-auto" 
+              <IconBox
+                icon={<GraphIcon size={40} />}
+                className="mb-6 mx-auto"
               />
               <h3 className="text-xl font-bold text-center mb-4 text-red-500">
                 Conversion Tracking

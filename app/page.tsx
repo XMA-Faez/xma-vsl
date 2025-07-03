@@ -258,40 +258,40 @@ export default function Home() {
       </section>
 
       {/* Results Section */}
-      <section className="w-full py-32 relative">
-        <SectionTitle title="Results We've Delivered" />
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.1 }}
-            className="grid grid-cols-1 lg:grid-cols-3 gap-8"
-          >
-            <TestimonialCard
-              client="Luxury Bag Brand"
-              testimonial="Increased revenue from a few thousand dirhams to 400,000 dirhams with a 12.65% customer retention rate (top 1% in luxury industry)."
-              achievement="Revenue Growth"
-              delayMultiplier={0}
-            />
-
-            <TestimonialCard
-              client="The Flower Guys"
-              testimonial="Helped this UAE e-commerce phenomenon take Dubai by storm in 2025 with website building, landing page optimization, and ad campaigns."
-              achievement="Market Domination"
-              delayMultiplier={1}
-            />
-
-            <TestimonialCard
-              client="Formatic Car Infos"
-              testimonial="Generated qualified leads daily and created an optimized landing page that significantly increased conversion rates."
-              achievement="Increased Conversions"
-              delayMultiplier={2}
-            />
-          </motion.div>
-        </div>
-      </section>
+      {/* <section className="w-full py-32 relative"> */}
+      {/*   <SectionTitle title="Results We've Delivered" /> */}
+      {/**/}
+      {/*   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"> */}
+      {/*     <motion.div */}
+      {/*       variants={staggerContainer} */}
+      {/*       initial="hidden" */}
+      {/*       whileInView="visible" */}
+      {/*       viewport={{ once: true, amount: 0.1 }} */}
+      {/*       className="grid grid-cols-1 lg:grid-cols-3 gap-8" */}
+      {/*     > */}
+      {/*       <TestimonialCard */}
+      {/*         client="Luxury Bag Brand" */}
+      {/*         testimonial="Increased revenue from a few thousand dirhams to 400,000 dirhams with a 12.65% customer retention rate (top 1% in luxury industry)." */}
+      {/*         achievement="Revenue Growth" */}
+      {/*         delayMultiplier={0} */}
+      {/*       /> */}
+      {/**/}
+      {/*       <TestimonialCard */}
+      {/*         client="The Flower Guys" */}
+      {/*         testimonial="Helped this UAE e-commerce phenomenon take Dubai by storm in 2025 with website building, landing page optimization, and ad campaigns." */}
+      {/*         achievement="Market Domination" */}
+      {/*         delayMultiplier={1} */}
+      {/*       /> */}
+      {/**/}
+      {/*       <TestimonialCard */}
+      {/*         client="Formatic Car Infos" */}
+      {/*         testimonial="Generated qualified leads daily and created an optimized landing page that significantly increased conversion rates." */}
+      {/*         achievement="Increased Conversions" */}
+      {/*         delayMultiplier={2} */}
+      {/*       /> */}
+      {/*     </motion.div> */}
+      {/*   </div> */}
+      {/* </section> */}
 
       {/* Stats Section */}
       <section className="w-full py-32 relative">

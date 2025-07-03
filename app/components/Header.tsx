@@ -51,6 +51,30 @@ export default function Header({
             poster={posterImg}
           />
         </motion.div>
+
+        {/* Call to Action Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          className="text-center"
+        >
+          <a
+            href="https://link.xmaboost.com/widget/booking/Tj3i8x3FyT8sQOayn89T"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-red-600/30"
+          >
+            <span className="text-lg">Book Your Strategy Call</span>
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </a>
+          <p className="text-gray-400 text-sm mt-3 max-w-md mx-auto">
+            Limited spots available. Click to secure your consultation and discover how we can scale your business.
+          </p>
+        </motion.div>
       </div>
     </section>
   );

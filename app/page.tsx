@@ -21,6 +21,7 @@ import SectionHeader from "./components/SectionHeader";
 import TestimonialCard from "./components/TestimonialCard";
 import Header from "./components/Header";
 import AdCarousel from "./components/AdCarousel";
+import FloatingCTA from "./components/FloatingCTA";
 
 // Animation variants
 const fadeIn = {
@@ -89,12 +90,10 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center bg-[#0f0f0f] text-gray-100 relative overflow-hidden">
       {/* Background elements */}
       <div className="fixed inset-0 z-0 w-full h-full">
-        <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+        <div className="absolute inset-0 h-full w-full bg-black/50 backdrop-blur-sm"></div>
 
         {/* Particles Background - Added higher z-index to ensure visibility */}
-        <div className="absolute inset-0 z-[1]">
-          <ParticlesBackground />
-        </div>
+        <ParticlesBackground />
       </div>
 
       {/* <div className="fixed top-20 left-20 w-64 h-64 border border-white/5 rounded-full backdrop-blur-sm bg-red-500/5 animate-float"></div> */}
@@ -140,8 +139,8 @@ export default function Home() {
 
       {/* Hero Section with Video */}
       <Header
-        title="XMA's Complete LeadFlow System"
-        subtitle="Thank you for booking your call with us. Watch this presentation to learn how we'll help grow your business in 2025."
+        title="Scale Your Business With Our Proven LeadFlow System"
+        subtitle="Watch this exclusive presentation to discover how we've generated 30K+ qualified leads and managed 3M+ dirhams in ad spend for businesses like yours."
         videoSrc="https://res.cloudinary.com/dw1j7izud/video/upload/v1747401674/djybf6fdqmbsdeofr3gz.mp4"
       />
 
@@ -834,6 +833,50 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
+
+      {/* Final CTA Section */}
+      <section className="w-full py-32 relative">
+        <div className="absolute inset-0 bg-gradient-to-r from-red-900/20 to-red-800/10"></div>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">
+              Ready to Scale Your Business?
+            </h2>
+            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
+              Join hundreds of successful businesses that have transformed their growth with our proven LeadFlow System. Book your strategy call today and discover your custom growth plan.
+            </p>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
+              <a
+                href="https://link.xmaboost.com/widget/booking/Tj3i8x3FyT8sQOayn89T"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-4 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-bold py-5 px-10 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-[0_8px_30px_rgba(239,68,68,0.4)] hover:shadow-[0_12px_40px_rgba(239,68,68,0.6)] text-lg"
+              >
+                <span>Book Your Free Strategy Call</span>
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12l4 4 4-4m0 6H8a2 2 0 01-2-2V7a2 2 0 012-2h8a2 2 0 012 2v1" />
+                </svg>
+              </a>
+              <p className="text-gray-400 text-sm mt-4 max-w-md mx-auto">
+                🔥 Limited availability - Only 5 strategy calls available this week
+              </p>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Floating CTA */}
+      <FloatingCTA />
     </main>
   );
 }

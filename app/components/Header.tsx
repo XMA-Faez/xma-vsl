@@ -24,7 +24,7 @@ export default function Header({
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="mb-8"
         >
-          <h1 className="text-4xl md:text-7xl font-bold text-center mb-6 bg-gradient-to-br from-red-400 via-red-500 to-red-700 bg-clip-text text-transparent leading-tight">
+          <h1 className="text-4xl md:text-7xl font-bold text-center mb-6 gradient-text leading-tight">
             {title}
           </h1>
           <p className="text-xl md:text-2xl text-center max-w-3xl mx-auto mb-12 text-gray-300 font-light tracking-wide">
@@ -38,7 +38,7 @@ export default function Header({
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, amount: 0.1 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="w-full max-w-4xl aspect-video bg-black mb-16 rounded-xl overflow-hidden border border-red-600/20 shadow-[0_0_35px_rgba(239,68,68,0.25)] relative group hover-scale"
+          className="w-full max-w-4xl aspect-video bg-black mb-16 rounded-xl overflow-hidden border border-red-500/20 shadow-[0_0_35px_rgba(255,68,68,0.25)] relative group hover-scale"
         >
           <video
             className="w-full h-full"
@@ -64,7 +64,7 @@ export default function Header({
             href="https://link.xmaboost.com/widget/booking/Tj3i8x3FyT8sQOayn89T"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-red-600/30"
+            className="inline-flex items-center gap-3 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-bold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-red-600/30"
           >
             <span className="text-lg">Book Your Strategy Call</span>
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

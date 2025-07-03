@@ -20,7 +20,7 @@ export default function SectionHeader({
       transition={{ duration: 0.5, ease: "easeOut" }}
       className={`mb-10 ${centered ? 'text-center' : ''}`}
     >
-      <h2 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-red-400 via-red-500 to-red-700 bg-clip-text text-transparent mb-4 leading-tight">
+      <h2 className="text-3xl md:text-5xl font-bold gradient-text mb-4 leading-tight">
         {title}
       </h2>
       <p className="text-xl text-gray-300 max-w-2xl mx-auto">

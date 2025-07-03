@@ -19,7 +19,7 @@ export default function IconBox({
 
   return (
     <div 
-      className={`flex items-center justify-center ${sizeClasses[size]} bg-gradient-to-br from-red-400 to-red-600 rounded-lg shadow-lg ${className}`}
+      className={`flex items-center justify-center ${sizeClasses[size]} bg-gradient-to-br from-red-600 to-red-700 rounded-lg shadow-lg ${className}`}
     >
       <div className="text-white">
         {icon}

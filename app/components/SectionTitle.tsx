@@ -19,7 +19,7 @@ export default function SectionTitle({
       viewport={{ once: true, amount: 0.1 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
     >
-      <h2 className={`text-3xl md:text-5xl font-bold ${centered ? 'text-center' : ''} mb-24 bg-gradient-to-r from-red-400 via-red-500 to-red-700 bg-clip-text text-transparent px-4 leading-tight ${className}`}>
+      <h2 className={`text-3xl md:text-5xl font-bold ${centered ? 'text-center' : ''} mb-24 gradient-text px-4 leading-tight ${className}`}>
         {title}
       </h2>
     </motion.div>

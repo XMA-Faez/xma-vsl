@@ -29,8 +29,8 @@ export default function FeaturedStat({
       className="p-10 rounded-xl bg-gradient-to-b from-[#161616] to-[#111111] backdrop-blur-md border border-[#222]/20 shadow-lg hover-shadow relative overflow-hidden group blur-fix"
       style={{ willChange: "transform" }}
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-red-500/10 to-transparent opacity-0 group-hover:opacity-100"></div>
-      <p className="text-7xl font-bold mb-6 bg-gradient-to-r from-red-400 via-red-500 to-red-700 bg-clip-text text-transparent relative z-10">
+      <div className="absolute inset-0 bg-gradient-to-br from-red-500/8 to-transparent opacity-0 group-hover:opacity-100"></div>
+      <p className="text-7xl font-bold mb-6 gradient-text relative z-10">
         {value}
       </p>
       <p className="text-xl text-gray-300 relative z-10">
